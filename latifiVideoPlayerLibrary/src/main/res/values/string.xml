@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="playError">خطا در پخش فایل</string>
+    <string name="loadingFile">در حال بارگزاری ...</string>
+    <string name="returnVideo">بازگشت</string>
+
+
+</resources>

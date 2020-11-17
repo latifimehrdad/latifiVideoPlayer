@@ -1,0 +1,3 @@
+include ':latifiVideoPlayerLibrary'
+include ':app'
+rootProject.name = "latifiVideoPlayer"
