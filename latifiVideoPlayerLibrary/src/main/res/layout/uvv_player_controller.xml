@@ -107,13 +107,14 @@
             android:visibility="gone"
             android:src="@drawable/uvv_player_scale_btn" />
 
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center_vertical"
             android:layout_toLeftOf="@id/scale_button"
             android:layout_toRightOf="@id/turn_button"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
@@ -148,8 +149,34 @@
                 android:layout_marginRight="10dp"
                 android:text="00:00"
                 android:textColor="@color/uvv_light_gray" />
+
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/imageViewQuality"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_settings"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+
+
         </LinearLayout>
+
+
     </RelativeLayout>
 
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/linearLayoutQuality"
+        android:layout_width="70dp"
+        android:layout_height="150dp"
+        android:background="#000"
+        android:layout_above="@id/control_layout"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        />
 
 </RelativeLayout>

@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -66,6 +68,10 @@ public class UniversalMediaController extends FrameLayout {
 
     Formatter mFormatter;
 
+    private LinearLayout linearLayoutQuality;
+
+    private ImageView imageViewQuality;
+
     private ImageButton mTurnButton;// دکمه مکث را روشن کنید
 
     private ImageButton mScaleButton;
@@ -110,6 +116,8 @@ public class UniversalMediaController extends FrameLayout {
         loadingLayout = (ViewGroup) v.findViewById(R.id.loading_layout);
         errorLayout = (ViewGroup) v.findViewById(R.id.error_layout);
         mTurnButton = (ImageButton) v.findViewById(R.id.turn_button);
+        imageViewQuality = (ImageView) v.findViewById(R.id.imageViewQuality);
+        linearLayoutQuality = (LinearLayout) v.findViewById(R.id.linearLayoutQuality);
         mScaleButton = (ImageButton) v.findViewById(R.id.scale_button);
         mCenterPlayButton = v.findViewById(R.id.center_play_btn);
         mBackButton = v.findViewById(R.id.back_btn);
@@ -117,6 +125,12 @@ public class UniversalMediaController extends FrameLayout {
         if (mTurnButton != null) {
             mTurnButton.requestFocus();
             mTurnButton.setOnClickListener(mPauseListener);
+        }
+
+
+        if (imageViewQuality != null) {
+            linearLayoutQuality.setVisibility(GONE);
+            imageViewQuality.setOnClickListener(mQualityListShow);
         }
 
         if (mScalable) {
@@ -237,6 +251,7 @@ public class UniversalMediaController extends FrameLayout {
             mHandler.removeMessages(SHOW_PROGRESS);
             mTitleLayout.setVisibility(GONE);
             mControlLayout.setVisibility(GONE);
+            linearLayoutQuality.setVisibility(GONE);
             mShowing = false;
         }
     }
@@ -472,6 +487,17 @@ public class UniversalMediaController extends FrameLayout {
                 doPauseResume();
                 show(sDefaultTimeout);
             }
+        }
+    };
+
+
+    private OnClickListener mQualityListShow = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (linearLayoutQuality.getVisibility() == View.GONE)
+                linearLayoutQuality.setVisibility(VISIBLE);
+            else
+                linearLayoutQuality.setVisibility(GONE);
         }
     };
 
