@@ -28,6 +28,7 @@ public class UniversalVideoView extends SurfaceView
     private String TAG = "UniversalVideoView";
     // settable by the client
     private Uri mUri;
+    private Map<String, String> mHeaders;
 
     // all possible internal states
     private static final int STATE_ERROR              = -1;
@@ -256,6 +257,7 @@ public class UniversalVideoView extends SurfaceView
      */
     public void setVideoURI(Uri uri, Map<String, String> headers) {
         mUri = uri;
+        mHeaders = headers;
         mSeekWhenPrepared = 0;
         openVideo();
         requestLayout();
@@ -299,7 +301,7 @@ public class UniversalVideoView extends SurfaceView
             mMediaPlayer.setOnInfoListener(mInfoListener);
             mMediaPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
             mCurrentBufferPercentage = 0;
-            mMediaPlayer.setDataSource(mContext, mUri);
+            mMediaPlayer.setDataSource(mContext, mUri, mHeaders);
             mMediaPlayer.setDisplay(mSurfaceHolder);
             mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             mMediaPlayer.setScreenOnWhilePlaying(true);
