@@ -3,13 +3,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
-
+    compileSdk 33
+    namespace 'ir.mlcode.latifivideoplayer'
     defaultConfig {
         applicationId "ir.mlcode.latifivideoplayer"
-        minSdkVersion 18
-        targetSdkVersion 30
+        minSdk 26
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 

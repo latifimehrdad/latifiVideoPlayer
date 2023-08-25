@@ -6,8 +6,6 @@ import android.hardware.SensorManager;
 import android.util.Log;
 import android.view.OrientationEventListener;
 
-import androidx.databinding.library.baseAdapters.BuildConfig;
-
 
 public class OrientationDetector {
 
@@ -47,9 +45,6 @@ public class OrientationDetector {
                     if (currDirection != lastDirection) {
                         resetTime();
                         lastDirection = currDirection;
-                        if (BuildConfig.DEBUG) {
-                            Log.d(TAG, String.format("تغییر جهت ، شروع زمان بندی ، جهت فعلی٪ s است", currDirection));
-                        }
                     } else {
                         calcHoldingTime();
                         if (holdingTime > HOLDING_THRESHOLD) {

@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -386,6 +387,7 @@ public class UniversalMediaController extends FrameLayout {
             mEndTime.setText(stringForTime(duration));
         if (mCurrentTime != null)
             mCurrentTime.setText(stringForTime(position));
+        Log.i("meri", "current position : " + position);
 
         return position;
     }

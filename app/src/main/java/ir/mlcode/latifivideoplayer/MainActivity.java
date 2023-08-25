@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Handler handler = new Handler();
         handler.postDelayed(() -> {
 
-            Uri uri= Uri.parse("https://pishtazan.bppir.com/Content/upload/EducationFile/video/Video/Az_BazarYabi_Ta_Namayandegi.mp4");
+            Uri uri= Uri.parse("http://5.160.125.98:5081/uploads/Videos/da2a151f-d627-430a-91a0-5ecbaa613ffa.mp4");
             universalVideoViewMovie.setMediaController(universalMediaController);
             universalVideoViewMovie.setVideoURI(uri);
             universalVideoViewMovie.start();

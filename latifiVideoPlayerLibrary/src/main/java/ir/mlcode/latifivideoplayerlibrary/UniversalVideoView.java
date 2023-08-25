@@ -19,6 +19,8 @@ import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
+import androidx.fragment.app.FragmentActivity;
+
 import java.io.IOException;
 import java.util.Map;
 
@@ -804,7 +806,8 @@ public class UniversalVideoView extends SurfaceView
     @Override
     public void setFullscreen(boolean fullscreen, int screenOrientation) {
         // Activity需要设置为: android:configChanges="keyboardHidden|orientation|screenSize"
-        Activity activity = (Activity) mContext;
+//        Activity activity = (Activity) mContext;
+        FragmentActivity activity = (FragmentActivity) mContext;
 
         if (fullscreen) {
             if (mVideoViewLayoutWidth == 0 && mVideoViewLayoutHeight == 0) {
