@@ -3,11 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
-    namespace 'ir.mlcode.latifivideoplayerlibrary'
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
     defaultConfig {
-        minSdk 26
-        targetSdk 33
+        minSdkVersion 18
+        targetSdkVersion 30
         versionCode 4
         versionName "1.4"
 
@@ -26,8 +27,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    buildFeatures {
-        dataBinding true
+    dataBinding {
+        enabled = true
     }
 }
 
